@@ -5,3 +5,6 @@
     editor = vim
 [push]
     default = upstream
+[credential]
+    # keep password stored for 1 hour
+	helper = cache --timeout=3600
