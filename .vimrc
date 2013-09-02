@@ -48,4 +48,5 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
 " colorscheme jellybeans
-colorscheme jellybeans
+set background=dark
+colorscheme solarized
