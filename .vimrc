@@ -5,7 +5,7 @@ execute pathogen#infect()
 set nu
 nnoremap <F12> :set nonumber!<CR>:set foldcolumn=0<CR>
 
-" enable code folding base on indentation
+" enable code folding base on indentation use 'za' to toggle
 set foldmethod=indent
 set foldlevel=99
 
