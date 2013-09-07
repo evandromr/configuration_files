@@ -57,5 +57,15 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_powerline_fonts = 1
 
+"flakes8 options (syntax checker for python)
+let g:PyFlakeOnWrite = 1
+let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
+let g:PyFlakeDefaultComplexity=10
+let g:PyFlakeDisabledMessages = ''
+let g:PyFlakeCWindow = 6
+let g:PyFlakeSigns = 1
+let g:PyFlakeMaxLineLength = 100
+let g:PyFlakeRangeCommand = 'Q'
+
 set background=dark
 colorscheme solarized
