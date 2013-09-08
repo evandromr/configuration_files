@@ -152,9 +152,9 @@ syn keyword pythonStatement     lambda yield
 syn keyword pythonStatement     with
 syn keyword pythonStatement     def class nextgroup=pythonFunction skipwhite
 syn keyword pythonRepeat        for while
-syn keyword pythonConditional   if elif else
+syn keyword pythonConditional   if elif else else:
 syn keyword pythonImport        import from
-syn keyword pythonException     try except finally
+syn keyword pythonException     try except finally try:
 syn keyword pythonOperator      and in is not or
 
 if s:Python2Syntax()
