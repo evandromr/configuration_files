@@ -36,7 +36,7 @@ set wrapmargin=79
 set colorcolumn=80
 
 "auto identation for python
-autocmd FileType python set smartindent cinwords=if,elif,else,else:,for,while,try,except,finally,def,class
+autocmd FileType python set smartindent cinwords=if,elif,else,else:,for,while,try,try:,except,finally,def,class
 
 " Pressing \ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
