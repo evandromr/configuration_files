@@ -18,6 +18,8 @@ syntax enable
 
 " Nerd Commenter needs this
 filetype plugin indent on
+" Defines file type comment marks for commentary.vim
+autocmd FileType python set commentstring=#\ %s
 
 " Airline needs this
 set laststatus=2
