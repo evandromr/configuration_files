@@ -66,5 +66,5 @@ let g:PyFlakeSigns = 1
 let g:PyFlakeMaxLineLength = 100
 let g:PyFlakeRangeCommand = 'Q'
 
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
