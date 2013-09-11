@@ -66,8 +66,6 @@ let g:PyFlakeSigns = 1
 let g:PyFlakeMaxLineLength = 100
 let g:PyFlakeRangeCommand = 'Q'
 
-" set solarized colorscheme if using gvim
-if has('gui_running')
-    set background=dark
-    colorscheme solarized
-endif
+" set solarized colorscheme
+set background=dark
+colorscheme solarized
