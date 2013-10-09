@@ -106,6 +106,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# added by Anaconda 1.7.0 installer
+export PATH="/home/evandro/anaconda/bin:$PATH"
+
 # add global menu to gvim
 function gvim () { (/usr/bin/gvim -f "$@" &) }
 
