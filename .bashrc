@@ -106,11 +106,32 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# added by Anaconda 1.7.0 installer
-export PATH="/home/evandro/anaconda/bin:$PATH"
+# add Heasoft wrappers
+#export PATH="/home/evandromr/Work/Softwares/heasoft-6.14/heasoft_wrap:$PATH"
+# add heainit alias to HEASOFT
+HEADAS=$HOME/Work/Softwares/heasoft-6.14/x86_64-unknown-linux-gnu-libc2.15-0
+export HEADAS
+alias heainit=". $HEADAS/headas-init.sh"
+
+# add sasinit alias to XMM-SAS
+SAS_DIR=$HOME/Work/Softwares/xmmsas_20130501_1901
+export SAS_DIR
+SAS_CCFPATH=$HOME/Work/XMM/CCF
+export SAS_CCFPATH
+SAS_ODF=$HOME/Work/XMM/OBS
+export SAS_ODF
+SAS_CCF=$HOME/Work/XMM/CCF
+export SAS_CCF
+alias sasinit=". $SAS_DIR/sas-setup.sh"
+
+# alias to call CIAO
+alias ciao="source $HOME/Work/Softwares/ciao-4.5/bin/ciao.bash"
 
 # add global menu to gvim
 function gvim () { (/usr/bin/gvim -f "$@" &) }
 
 # git status on bash
 source ~/.bash/gitprompt.sh
+
+# added by Anaconda 1.7.0 installer
+export PATH="/home/evandromr/anaconda/bin:$PATH"
