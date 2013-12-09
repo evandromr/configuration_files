@@ -18,10 +18,11 @@ syntax enable
 
 " Nerd Commenter needs this
 filetype plugin indent on
+
 " Defines file type comment marks for commentary.vim
 autocmd FileType python set commentstring=#\ %s
 
-" Airline needs this
+" Airline needs this (enable status, and terminal colors)
 set laststatus=2
 set t_Co=256
 
@@ -55,6 +56,9 @@ let g:airline#extensions#branch#symbol = '⎇ '
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_powerline_fonts = 1
+
+" set powerline font for vim and gvim (need the powerline fonts 'duh!')
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 
 "flakes8 options (syntax checker for python)
 let g:PyFlakeOnWrite = 1
