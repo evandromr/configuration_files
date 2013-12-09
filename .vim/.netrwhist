@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/var/lib/dpkg'
-let g:netrw_dirhist_2='/home/evandromr/Work/Codes/my-scitools'
-let g:netrw_dirhist_3='/home/evandromr/Work/gcasstars'
