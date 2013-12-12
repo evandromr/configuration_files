@@ -3,7 +3,10 @@
 # for examples
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -106,7 +109,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# add Heasoft wrappers
 # add Heasoft wrappers
 export PATH="$HOME/Work/Softwares/heasoft-6.14/heasoft_wrap:$PATH"
 
