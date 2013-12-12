@@ -33,8 +33,27 @@ sasinit() {
 anaconda() {
 export PATH="/home/evandromr/anaconda/bin:$PATH"
 }
+# an alias direct to the python3 environment of anaconda
+anaconda3() {
+export PATH="/home/evandromr/anaconda/bin:$PATH"
+source activate py3conda
+}
 
-# git status on bash
+# start a python3 local environment
+py3env(){
+    source $HOME/.localpython/py3env/bin/activate
+}
+
+# Starts Ureka environment
+ur_setup() {
+    eval `/home/evandromr/.ureka/ur_setup -sh $*`
+}
+# Ends Ureka environment
+ur_forget() {
+    eval `/home/evandromr/.ureka/ur_forget -sh $*`
+}
+
+# show git status and python virtual environments on bash
 source $HOME/.bash/gitprompt.sh
 
 # add global menu to gvim
