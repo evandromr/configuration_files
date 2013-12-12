@@ -39,11 +39,6 @@ export PATH="/home/evandromr/anaconda/bin:$PATH"
 source activate py3conda
 }
 
-# start a python3 local environment
-py3env(){
-    source $HOME/.localpython/py3env/bin/activate
-}
-
 # Starts Ureka environment
 ur_setup() {
     eval `/home/evandromr/.ureka/ur_setup -sh $*`
