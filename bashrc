@@ -31,7 +31,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
@@ -112,3 +112,20 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+ur_setup() {
+    eval `/home/evandromr/.ureka/ur_setup -sh $*`
+}
+ur_forget() {
+    eval `/home/evandromr/.ureka/ur_forget -sh $*`
+}
+
+# added by Anaconda 1.9.2 installer
+# modified by the user
+anaconda() {
+	export PATH="/home/evandromr/anaconda/bin:$PATH"
+}
+#git prompt
+# as of https://github.com/magicmonty/bash-git-prompt
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
