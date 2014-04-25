@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# add by Ureka v1.0 Installer
+ur_setup() {
+    eval `/home/evandromr/.ureka/ur_setup -sh $*`
+}
+ur_forget() {
+    eval `/home/evandromr/.ureka/ur_forget -sh $*`
+}
+
+# added by Anaconda 1.9.2 installer
+# modified to a function call instead of export
+# modified to define a VIRTUAL_ENV variable for bash-git-prompt
+anaconda() {
+	export PATH="/home/evandromr/anaconda/bin:$PATH"
+    export VIRTUAL_ENV="anaconda"
+}
+
 # add Heasoft wrappers
 export PATH="/science/heasoft/heasoft-6.15.1/heasoft_wrap:$PATH"
 
