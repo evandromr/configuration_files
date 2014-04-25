@@ -116,19 +116,7 @@ fi
 # PyRAF always plot with matplotlib
 export PYRAFGRAPHICS=matplotlib
 
-ur_setup() {
-    eval `/home/evandromr/.ureka/ur_setup -sh $*`
-}
-ur_forget() {
-    eval `/home/evandromr/.ureka/ur_forget -sh $*`
-}
-
-# added by Anaconda 1.9.2 installer
-# modified by the user
-anaconda() {
-	export PATH="/home/evandromr/anaconda/bin:$PATH"
-}
 #git prompt
 # as of https://github.com/magicmonty/bash-git-prompt
-GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_ONLY_IN_REPO=0
 source ~/.bash-git-prompt/gitprompt.sh
