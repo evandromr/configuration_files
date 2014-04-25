@@ -59,7 +59,7 @@ The symbols are as follows:
    # gitprompt configuration
 
    # Set config variables first
-   GIT_PROMPT_ONLY_IN_REPO=1
+   GIT_PROMPT_ONLY_IN_REPO=0
 
    # as last entry source the gitprompt script
    source .bash-git-prompt/gitprompt.sh
