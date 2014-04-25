@@ -113,6 +113,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# PyRAF always plot with matplotlib
+export PYRAFGRAPHICS=matplotlib
+
 ur_setup() {
     eval `/home/evandromr/.ureka/ur_setup -sh $*`
 }
