@@ -165,7 +165,7 @@ function setGitPrompt() {
 
   local repo=`git rev-parse --show-toplevel 2> /dev/null`
   if [[ ! -e "${repo}" ]]; then
-    PS1="${EMPTY_PROMPT}"
+    PS1="${EMPTY_PROMPT}$ "
     return
   fi
 
@@ -263,13 +263,13 @@ function updatePrompt() {
     STATUS="${STATUS}${ResetColor}${GIT_PROMPT_SUFFIX}"
 
 
-    PS1="${PROMPT_START}$($prompt_callback)${STATUS}${PROMPT_END}"
+    PS1="${PROMPT_START}$($prompt_callback)${STATUS}${PROMPT_END}$ "
     if [[ -n "${VIRTUAL_ENV}" ]]; then
       PS1="(${Blue}$(basename ${VIRTUAL_ENV})${ResetColor}) ${PS1}"
     fi
 
   else
-    PS1="${EMPTY_PROMPT}"
+    PS1="${EMPTY_PROMPT}$ "
   fi
 }
 
