@@ -113,10 +113,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# PyRAF always plot with matplotlib
-export PYRAFGRAPHICS=matplotlib
-
 #git prompt
 # as of https://github.com/magicmonty/bash-git-prompt
 GIT_PROMPT_ONLY_IN_REPO=0
 source ~/.bash-git-prompt/gitprompt.sh
+
+# Add iraf setup commands
+if [ -e /home/evandromr/.iraf/setup.sh ]; then
+    source /home/evandromr/.iraf/setup.sh
+fi
+
+# PyRAF always plot with matplotlib
+export PYRAFGRAPHICS=matplotlib
