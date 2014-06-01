@@ -20,9 +20,10 @@ syntax on
 syntax enable
 
 " Nerd Commenter needs this
+" https://github.com/scrooloose/nerdcommenter
 filetype plugin indent on
 
-" identation = 4 spaces
+" default identation = 4 spaces
 set noai ts=4 sw=4 expandtab
 
 " smart indentation
