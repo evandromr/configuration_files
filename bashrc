@@ -3,10 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[ -z "$PS1" ] && return
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -31,7 +28,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
@@ -105,23 +102,32 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
-  fi
 fi
 
-#git prompt
-# as of https://github.com/magicmonty/bash-git-prompt
-GIT_PROMPT_ONLY_IN_REPO=0
-source ~/.bash-git-prompt/gitprompt.sh
+# added by Ureka 1.0 installer
+ur_setup() {
+    eval `/home/evandro/.ureka/ur_setup -sh $*`
+}
+ur_forget() {
+    eval `/home/evandro/.ureka/ur_forget -sh $*`
+}
 
-# Add iraf setup commands
-if [ -e /home/evandromr/.iraf/setup.sh ]; then
-    source /home/evandromr/.iraf/setup.sh
+# Add iraf setup commands (added by iraf 2.16.1 installer)
+if [ -e /home/evandro/.iraf/setup.sh ]; then
+    source /home/evandro/.iraf/setup.sh
 fi
 
-# PyRAF always plot with matplotlib
-export PYRAFGRAPHICS=matplotlib
+# added to support TUG texlive installation
+export PATH="$PATH:/usr/local/texlive/2013/bin/x86_64-linux"
+
+# added by Anaconda 2.0 installer
+export PATH="/home/evandro/anaconda/bin:$PATH"
+
+# show git status and python virtual environments on bash
+source $HOME/.bash/gitprompt.sh
+
+# add global menu to gvim
+# to avoid warning (don't need in Ubuntu 13.10 onwards)
+function gvim () { (/usr/bin/gvim -f "$@" &) }

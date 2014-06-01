@@ -1,40 +1,24 @@
 #!/bin/bash
 
-# add by Ureka v1.0 Installer
-ur_setup() {
-    eval `/home/evandromr/.ureka/ur_setup -sh $*`
-}
-ur_forget() {
-    eval `/home/evandromr/.ureka/ur_forget -sh $*`
-}
-
-# added by Anaconda 1.9.2 installer
-# modified to a function call instead of export
-# modified to define a VIRTUAL_ENV variable for bash-git-prompt
-anaconda() {
-	export PATH="/home/evandromr/anaconda/bin:$PATH"
-    export VIRTUAL_ENV="anaconda"
-}
-
 # add Heasoft wrappers
-export PATH="/science/heasoft/heasoft-6.15.1/heasoft_wrap:$PATH"
+export PATH="/home/evandro/heasoft/heasoft-6.15.1/heasoft_wrap:$PATH"
 
 # add heainit alias to HEASOFT (to use python with pyxspec)
 heainit() {
-   export HEADAS=/science/heasoft/heasoft-6.15.1/x86_64-unknown-linux-gnu-libc2.5
-   . $HEADAS/headas-init.sh
+    export HEADAS=/home/evandro/heasoft/heasoft-6.15.1/x86_64-unknown-linux-gnu-libc2.15-0
+    . $HEADAS/headas-init.sh
 }
 
 # alias to call CIAO
-#ciao() {
-#    source /home/evandro/chandra/ciao-4.6/bin/ciao.bash
-#}
+ciao() {
+    source /home/evandro/chandra/ciao-4.6/bin/ciao.bash
+}
 
 # add sasinit alias to XMM-SAS
 sasinit() {
-    export SAS_DIR=/science/xmm/xmmsas_20131209_1901
-    export SAS_CCFPATH=/science/xmm/ccf
-    export SAS_ODF=/science/xmm/obs
-    export SAS_CCF=/science/xmm/ccf
+    export SAS_DIR=/home/evandro/xmm/xmmsas_20131209_1901
+    export SAS_CCFPATH=/home/evandro/xmm/ccf
+    export SAS_ODF=/home/evandro/xmm/obs
+    export SAS_CCF=/home/evandro/xmm/ccf
     . $SAS_DIR/sas-setup.sh
 }
