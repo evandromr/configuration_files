@@ -108,22 +108,22 @@ fi
 
 # added by Ureka 1.0 installer
 ur_setup() {
-    eval `/home/evandro/.ureka/ur_setup -sh $*`
+    eval `${HOME}/.ureka/ur_setup -sh $*`
 }
 ur_forget() {
-    eval `/home/evandro/.ureka/ur_forget -sh $*`
+    eval `${HOME}/.ureka/ur_forget -sh $*`
 }
 
 # Add iraf setup commands (added by iraf 2.16.1 installer)
-if [ -e /home/evandro/.iraf/setup.sh ]; then
-    source /home/evandro/.iraf/setup.sh
+if [ -e $HOME/.iraf/setup.sh ]; then
+    source $HOME/.iraf/setup.sh
 fi
 
 # added to support TUG texlive installation
 export PATH="$PATH:/usr/local/texlive/2013/bin/x86_64-linux"
 
 # added by Anaconda 2.0 installer
-export PATH="/home/evandro/anaconda/bin:$PATH"
+export PATH="$HOME/anaconda/bin:$PATH"
 
 # show git status and python virtual environments on bash
 source $HOME/.bash/gitprompt.sh
