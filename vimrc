@@ -35,6 +35,9 @@ set textwidth=79
 set wrapmargin=79
 set colorcolumn=80
 
+" git commits only 72 chars long
+autocmd Filetype gitcommit set textwidth=72
+
 " Pressing \ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
