@@ -50,6 +50,9 @@ set iskeyword+=:
 imap <C-b> <Plug>Tex_MathBF
 imap <C-c> <Plug>Tex_MathCal
 imap <C-l> <Plug>Tex_LeftRight
+" fix to allow the e-acute (é) charachter
+" http://vim-latex.sourceforge.net/index.php?subject=faq&title=FAQ#faq-e-acute
+imap <buffer> <leader>it <Plug>Tex_InsertItemOnThisLine
 " optional: set 2 spaces tab to work with tex files
 autocmd FileType tex set sw=2
 
@@ -71,4 +74,4 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#branch#symbol = '⎇ '
 let g:airline_powerline_fonts = 1
 " patched powerline font for fancy symbols
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12

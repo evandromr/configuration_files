@@ -106,28 +106,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# added by Ureka 1.0 installer
-ur_setup() {
-    eval `${HOME}/.ureka/ur_setup -sh $*`
-}
-ur_forget() {
-    eval `${HOME}/.ureka/ur_forget -sh $*`
-}
-
-# Add iraf setup commands (added by iraf 2.16.1 installer)
-if [ -e $HOME/.iraf/setup.sh ]; then
-    source $HOME/.iraf/setup.sh
-fi
-
-# added to support TUG texlive installation
-export PATH="$PATH:/usr/local/texlive/2013/bin/x86_64-linux"
-
-# added by Anaconda 2.0 installer
-export PATH="$HOME/anaconda/bin:$PATH"
+# add global menu to gvim
+# to avoid warning (don't need in Ubuntu 13.10 onwards)
+function gvim () { (/usr/bin/gvim -f "$@" &) }
 
 # show git status and python virtual environments on bash
 source $HOME/.bash/gitprompt.sh
 
-# add global menu to gvim
-# to avoid warning (don't need in Ubuntu 13.10 onwards)
-function gvim () { (/usr/bin/gvim -f "$@" &) }
+# added to support TUG texlive installation
+export PATH="$PATH:/usr/local/texlive/2013/bin/x86_64-linux"
