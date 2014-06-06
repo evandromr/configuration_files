@@ -1,5 +1,9 @@
+" Turno filetype detection on only after initialize pathogen
+filetype off
 " Start pathogen to load plugins in ~/.vim/bundle
 execute pathogen#infect()
+" Turn plugins' helptags available
+execute pathogen#helptags()
 
 " show line numbers always, and toggle with <F12> key
 set nu
@@ -74,4 +78,4 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#branch#symbol = '⎇ '
 let g:airline_powerline_fonts = 1
 " patched powerline font for fancy symbols
-" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+set guifont=Ubuntu\ Mono\ 12
