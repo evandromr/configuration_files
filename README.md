@@ -50,7 +50,7 @@ The symbols are as follows:
 ## Install
 
 - Clone this repository to your homedir
-   e.g. ``git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt``
+   e.g. ``git clone https://github.com/evandromr/bash-git-prompt.git .bash-git-prompt``
 - Source the file ``gitprompt.sh`` from your ``~/.bashrc`` config file:
 
 ```sh
