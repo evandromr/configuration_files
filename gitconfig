@@ -1,6 +1,10 @@
 [user]
 	name = Evandro Martinez Ribeiro
 	email = evandromartinezribeiro@gmail.com
+[github]
+    user = evandromr
+[color]
+    ui = true
 [core]
 	editor = vim
 [push]
