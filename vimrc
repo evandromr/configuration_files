@@ -1,4 +1,4 @@
-" Turno filetype detection on only after initialize pathogen
+" Turn file type detection on only after initialize pathogen
 filetype off
 " Start pathogen to load plugins in ~/.vim/bundle
 execute pathogen#infect()
@@ -54,7 +54,6 @@ if has('gui_running')
     colorscheme solarized
 endif
 
-
 " airline plugin options
 " https://github.com/bling/vim-airline
 set laststatus=2
@@ -66,4 +65,5 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#branch#symbol = '⎇ '
 let g:airline_powerline_fonts = 1
 
+" Highlight current cursor line
 set cursorline
