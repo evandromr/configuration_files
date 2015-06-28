@@ -45,27 +45,15 @@ autocmd Filetype gitcommit set textwidth=72
 " Pressing \ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
-" VIM-LaTeX options
-" http://vim-latex.sourceforge.net/index.php
-set grepprg=grp\ -nH\ $*
-let g:tex_flavor='latex'
-set iskeyword+=:
-" optional: remap vim-latex mapping to allow brazillian accents as \~ and \`
-imap <C-b> <Plug>Tex_MathBF
-imap <C-c> <Plug>Tex_MathCal
-imap <C-l> <Plug>Tex_LeftRight
-" fix to allow the e-acute (é) charachter
-" http://vim-latex.sourceforge.net/index.php?subject=faq&title=FAQ#faq-e-acute
-imap <buffer> <leader>it <Plug>Tex_InsertItemOnThisLine
-" optional: set 2 spaces tab to work with tex files
-autocmd FileType tex set sw=2
-
-" set solarized colorscheme on gvim (but not vim)
-" https://github.com/altercation/vim-colors-solarized
 if has('gui_running')
     set background=dark
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
+    let g:solarized_contrast="high"
+    let g:solarized_visibility="high"
     colorscheme solarized
 endif
+
 
 " airline plugin options
 " https://github.com/bling/vim-airline
@@ -77,5 +65,5 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#branch#symbol = '⎇ '
 let g:airline_powerline_fonts = 1
-" patched powerline font for fancy symbols
-set guifont=Ubuntu\ Mono\ 12
+
+set cursorline
