@@ -10,9 +10,6 @@
 [submodule "bash-git-prompt"]
 	path = bash
 	url = https://github.com/evandromr/bash-git-prompt.git
-[submodule "vim/bundle/nerdtree-git-plugin"]
-	path = vim/bundle/nerdtree-git-plugin
-	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
 [submodule "vim/bundle/vim-flagship"]
 	path = vim/bundle/vim-flagship
 	url = git@github.com:tpope/vim-flagship.git
