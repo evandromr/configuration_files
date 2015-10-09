@@ -84,9 +84,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -116,12 +113,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# show git status and python virtual environments on bash
-source $HOME/.bash/gitprompt.sh
-
-# use TUG 2015 texlive as tex enviroment
+# Use texlive installations
 export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
 
-# Initiate CALDB
-export CALDB="/home/evandromr/Work/CALDB"
-source $CALDB/software/tools/caldbinit.sh
+# show git status and python virtual environments on bash
+# gitprompt configuration
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME="MyCustom" # use custom .git-prompt-colors.sh
+source $HOME/.bash/gitprompt.sh
+
+# added by Anaconda 2.3.0 installer
+export PATH="/home/evandromr/anaconda/bin:$PATH"
