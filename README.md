@@ -319,3 +319,19 @@ I accept tips through [Flattr][flattr].
 [flattr]: https://flattr.com/submit/auto?user_id=magicmonty&url=https%3A%2F%2Fgithub.com%2Fmagicmonty%2Fbash-git-prompt
 [homebrew]: http://brew.sh/
 [upforgrabs]: https://github.com/magicmonty/bash-git-prompt/labels/up-for-grabs
+=======
+# My configuration files
+
+This repository is intended to keep my configuration files
+to easy the experience of setting up a new work machine
+
+Feel free to use whatever helps you, but i am not responsable in case of damage
+to your computer. In case of doubt, make contact.
+
+-- Usage information:
+
+ - clone it locally
+ - `git submodule init` (initiate submodules)
+ - `git submodule update` (update submodules)
+ - add '.' to files (e.g vimrc -> .vimrc; bash/ -> .bash/)
+ - copy to `$HOME`
