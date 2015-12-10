@@ -137,13 +137,11 @@ export PATH MANPATH LD_LIBRARY_PATH PFDIR WISK
 
 # my local software
 export PATH=/net/brooks/data/users/ribeiro/local/bin:$PATH
-
-# HEASOFT and PGLOT fonts
 export PATH=/net/brooks/data/users/ribeiro/Softwares/heasoft-6.17/heasoft_wrap:$PATH
 export PGPLOT_DIR=/net/brooks/data/users/ribeiro/Softwares/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.12/lib
 
 ## TO-DO: Fix CALDB installation
-# CALDB config (NOT WORKING)
+# CALDB config (NOT WORKING, see bash_aliases)
 export CALDB=/net/brooks/data/users/ribeiro/caldb
 export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
@@ -155,8 +153,9 @@ export PATH="/net/brooks/data/users/ribeiro/anaconda/bin:$PATH"
 # Git "oficial status prompt" 
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
+
 #PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
-PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\\\$ "'
+PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[00;31m\]\u@\h\[\033[00m\]:\[\033[0;35m\]\w\[\033[00m\]" "\\\$ "'
 GIT_PS1_SHOWDIRTYSTATE=1     # *=unstaged +=staged
 GIT_PS1_SHOWSTASHSTATE=1     # $=stashed
 GIT_PS1_SHOWUNTRACKEDFILES=1 # %=untracked
