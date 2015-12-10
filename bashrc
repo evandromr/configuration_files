@@ -37,13 +37,13 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -84,6 +84,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -113,14 +116,22 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Use texlive installations
+# Heasoft wrapper
+export PATH="/home/evandromr/Work/Softwares/heasoft-6.17/heasoft_wrap:$PATH"
+export HEADAS=/home/evandromr/Work/Softwares/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.21-0
+
+# TUG Texlive path
 export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
+# Git "oficial status prompt" 
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
 
-# show git status and python virtual environments on bash
-# gitprompt configuration
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_THEME="MyCustom" # use custom .git-prompt-colors.sh
-source $HOME/.bash/gitprompt.sh
+#PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\\\$ "'
+GIT_PS1_SHOWDIRTYSTATE=1     # *=unstaged +=staged
+GIT_PS1_SHOWSTASHSTATE=1     # $=stashed
+GIT_PS1_SHOWUNTRACKEDFILES=1 # %=untracked
+GIT_PS1_SHOWUPSTREAM="auto"  # show HEAD vs. upstream
+#GIT_PS1_STATESEPARATOR=" "  # Separator
+GIT_PS1_SHOWCOLORHINTS=1     # use colors
 
-# added by Anaconda 2.3.0 installer
-export PATH="/home/evandromr/anaconda/bin:$PATH"
