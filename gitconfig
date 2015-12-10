@@ -1,13 +1,14 @@
 [user]
-	name = Evandro Martinez Ribeiro
-	email = evandromartinezribeiro@gmail.com
+    name = Evandro Martinez Ribeiro
+    email = evandromartinezribeiro@gmail.com
 [github]
     user = evandromr
 [color]
     ui = true
 [core]
-	editor = vim
+	editor = atom --wait
+	autocrlf = input
 [push]
-	default = upstream
+	default = simple
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
