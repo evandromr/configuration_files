@@ -155,7 +155,7 @@ source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
 #PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
-PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[00;31m\]\u@\h\[\033[00m\]:\[\033[0;35m\]\w\[\033[00m\]" "\\\$ "'
+PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;35m\]\w\[\033[00m\]" "\\\$ "'
 GIT_PS1_SHOWDIRTYSTATE=1     # *=unstaged +=staged
 GIT_PS1_SHOWSTASHSTATE=1     # $=stashed
 GIT_PS1_SHOWUNTRACKEDFILES=1 # %=untracked
