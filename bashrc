@@ -8,6 +8,11 @@ case $- in
       *) return;;
 esac
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -113,14 +118,48 @@ if ! shopt -oq posix; then
   fi
 fi
 
+###
+# HERE starts my additions
+###
+
 # Use texlive installations
-export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
+export PATH="/net/brooks/data/users/ribeiro/local/texlive/2015/bin/x86_64-linux:$PATH"
 
-# show git status and python virtual environments on bash
-# gitprompt configuration
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_THEME="MyCustom" # use custom .git-prompt-colors.sh
-source $HOME/.bash/gitprompt.sh
+# X-ray softwares and fortran compiler
+PATH=/Software/users/xray/lf9561/bin:$PATH
+MANPATH=/Software/users/xray/lf9561/manuals/man/ssl2:$MANPATH
+MANPATH=/Software/users/xray/lf9561/manuals/man/lf95:$MANPATH
+LD_LIBRARY_PATH=/Software/users/xray/lf9561/lib:$LD_LIBRARY_PATH
+PFDIR=/Software/users/xray/lf9561/bin
+WISK=/Software/users/xray/lf9561/
+export PATH=/Software/users/xray/bin:$PATH
+export PATH MANPATH LD_LIBRARY_PATH PFDIR WISK
 
-# added by Anaconda 2.3.0 installer
-export PATH="/home/evandromr/anaconda/bin:$PATH"
+# my local software
+export PATH=/net/brooks/data/users/ribeiro/local/bin:$PATH
+
+# HEASOFT and PGLOT fonts
+export PATH=/net/brooks/data/users/ribeiro/Softwares/heasoft-6.17/heasoft_wrap:$PATH
+export PGPLOT_DIR=/net/brooks/data/users/ribeiro/Softwares/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.12/lib
+
+## TO-DO: Fix CALDB installation
+# CALDB config (NOT WORKING)
+export CALDB=/net/brooks/data/users/ribeiro/caldb
+export CALDBCONFIG=$CALDB/software/tools/caldb.config
+export CALDBALIAS=$CALDB/software/tools/alias_config.fits
+#source $CALDB/software/tools/caldbinit.sh
+
+# added by Anaconda2 2.4.1 installer
+export PATH="/net/brooks/data/users/ribeiro/anaconda/bin:$PATH"
+
+# Git "oficial status prompt" 
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
+#PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\\\$ "'
+GIT_PS1_SHOWDIRTYSTATE=1     # *=unstaged +=staged
+GIT_PS1_SHOWSTASHSTATE=1     # $=stashed
+GIT_PS1_SHOWUNTRACKEDFILES=1 # %=untracked
+GIT_PS1_SHOWUPSTREAM="auto"  # show HEAD vs. upstream
+#GIT_PS1_STATESEPARATOR=" "  # Separator
+GIT_PS1_SHOWCOLORHINTS=1     # use colors
